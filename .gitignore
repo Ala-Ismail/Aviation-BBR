@@ -1,0 +1,104 @@
+# Local editor and operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+.vs/
+.idea/
+
+# Local environment and Python tooling
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Generated build and simulation directories
+/build/
+/dist/
+/sim_build/
+/work/
+/coverage/
+
+# Intel Quartus generated databases and compilation output
+db/
+incremental_db/
+output_files/
+greybox_tmp/
+*.qws
+*.qdf
+*.qpf.bak
+*.qsf.bak
+*.smsg
+*.summary
+*.rpt
+*.jdi
+*.qdz
+
+# AMD/Xilinx Vivado and ISE generated output
+.Xil/
+*.cache/
+*.gen/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.jou
+*.pb
+*.str
+*.wdb
+*.wcfg.bak
+_xmsgs/
+xlnx_auto_0_xdb/
+_ngo/
+_xps/
+*.ise
+*.xise.bak
+*.gise
+
+# ModelSim / Questa simulator databases
+transcript
+vsim.wlf
+*.wlf
+*.mpf.bak
+modelsim.ini
+wlft*
+vsim_stacktrace.vstf
+
+# GHDL libraries and compiled objects
+*-obj*.cf
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+
+# Simulation waveforms and logs
+*.vcd
+*.vcd.gz
+*.ghw
+*.fst
+*.vpd
+*.log
+
+# Generated FPGA programming images and implementation checkpoints
+*.sof
+*.pof
+*.jic
+*.rbf
+*.rpd
+*.bit
+*.bin
+*.mcs
+*.dcp
+
+# Keep HDL, testbenches, constraints, memory initialization files,
+# project definitions, IP configuration, and reproducible scripts tracked.
+# Examples: .vhd, .vhdl, .sdc, .xdc, .qpf, .qsf, .xpr, .qsys,
+# .ip, .qip, .xci, .mif, .hex, .tcl, and .sby.
