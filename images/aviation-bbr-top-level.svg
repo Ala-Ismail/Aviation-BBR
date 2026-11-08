@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1080" viewBox="0 0 1800 1080" role="img" aria-labelledby="title description">
+  <title id="title">Aviation BBR: proposed top-level instrument recorder</title>
+  <desc id="description">Aircraft instrument data enters acquisition, scheduled queues and a chunk framer inside a MAX 10 10M50 FPGA. The storage controller writes mirrored F-RAM staging and a 32 GiB raw NAND archive in a proposed crash-survivable memory unit. External time, recording control, health supervision, host readout and independent media extraction are shown. This is a design proposal, not implemented hardware.</desc>
+  <rect x="0" y="0" width="1800" height="1080" rx="0" fill="#f4f7fb" stroke="#f4f7fb" stroke-width="2" />
+  <text x="40" y="57" fill="#183349" font-size="34" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">AVIATION BBR</text>
+  <text x="40" y="91" fill="#526b7e" font-size="23" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Top-level flight instrument and aircraft-system recorder</text>
+  <text x="1760" y="54" fill="#087e8b" font-size="17" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="end">PROPOSED ARCHITECTURE</text>
+  <text x="1760" y="84" fill="#526b7e" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="end">8 November 2026  |  Instrument data only</text>
+  <rect x="400" y="130" width="850" height="800" rx="22" fill="#eaf2fa" stroke="#8daec9" stroke-width="2" />
+  <text x="430" y="168" fill="#183349" font-size="25" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">FPGA  ·  MAX 10 10M50DAF484I7G</text>
+  <text x="430" y="199" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">75 MHz core  |  30,000 fitted-LE planning limit  |  182 M9Ks available</text>
+  <rect x="1280" y="445" width="480" height="255" rx="20" fill="#e9f6ee" stroke="#529d70" stroke-width="2" />
+  <text x="1300" y="476" fill="#287146" font-size="17" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">PROPOSED CRASH-PROTECTED MEMORY</text>
+  <rect x="40" y="235" width="300" height="160" rx="16" fill="#ffffff" stroke="#d2dde7" stroke-width="2" />
+  <text x="58" y="269" fill="#183349" font-size="21" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">Aircraft instrument data</text>
+  <text x="58" y="301" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Air data, attitude, navigation</text>
+  <text x="58" y="328" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Engines, controls, warnings</text>
+  <text x="58" y="355" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Via bus / ADC front ends</text>
+  <rect x="40" y="435" width="300" height="120" rx="16" fill="#ffffff" stroke="#d2dde7" stroke-width="2" />
+  <text x="58" y="469" fill="#183349" font-size="21" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">External time service</text>
+  <text x="58" y="501" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Coherent time / valid / ticks</text>
+  <text x="58" y="528" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Owns time synchronization</text>
+  <rect x="40" y="635" width="300" height="120" rx="16" fill="#ffffff" stroke="#d2dde7" stroke-width="2" />
+  <text x="58" y="669" fill="#183349" font-size="21" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">Aircraft power / state</text>
+  <text x="58" y="701" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Power-good, reset, flight state</text>
+  <text x="58" y="728" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Supervised supply to all blocks</text>
+  <rect x="40" y="785" width="300" height="100" rx="16" fill="#ffffff" stroke="#d2dde7" stroke-width="2" />
+  <text x="58" y="819" fill="#183349" font-size="21" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">DSP / maintenance host</text>
+  <text x="58" y="851" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Commands, status, downloads</text>
+  <rect x="440" y="235" width="230" height="160" rx="16" fill="#ffffff" stroke="#d2dde7" stroke-width="2" />
+  <text x="458" y="269" fill="#183349" font-size="20" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">Acquisition adapters</text>
+  <text x="458" y="301" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Parameter / source IDs</text>
+  <text x="458" y="328" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Input timestamps</text>
+  <text x="458" y="355" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Validity and source age</text>
+  <rect x="710" y="235" width="190" height="160" rx="16" fill="#ffffff" stroke="#d2dde7" stroke-width="2" />
+  <text x="728" y="269" fill="#183349" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">Scheduled queues</text>
+  <text x="728" y="301" fill="#526b7e" font-size="17" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Per-parameter rates</text>
+  <text x="728" y="328" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Bounded FIFOs</text>
+  <text x="728" y="355" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Loss / gap tracking</text>
+  <rect x="940" y="235" width="270" height="160" rx="16" fill="#ffffff" stroke="#d2dde7" stroke-width="2" />
+  <text x="958" y="269" fill="#183349" font-size="19" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">Continuous chunk framer</text>
+  <text x="958" y="301" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Versioned records and CRC</text>
+  <text x="958" y="328" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Sequence / time / quality</text>
+  <text x="958" y="355" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Short recoverable chunks</text>
+  <rect x="440" y="475" width="230" height="150" rx="16" fill="#fff6e8" stroke="#dfbb7c" stroke-width="2" />
+  <text x="458" y="509" fill="#183349" font-size="21" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">Recording control</text>
+  <text x="458" y="541" fill="#526b7e" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Automatic flight operation</text>
+  <text x="458" y="568" fill="#526b7e" font-size="14" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Preservation / safe commands</text>
+  <text x="458" y="595" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Optional event markers</text>
+  <rect x="710" y="475" width="190" height="150" rx="16" fill="#fff6e8" stroke="#dfbb7c" stroke-width="2" />
+  <text x="728" y="509" fill="#183349" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">Health supervisor</text>
+  <text x="728" y="541" fill="#526b7e" font-size="17" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Recorder self-checks</text>
+  <text x="728" y="568" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Time / queue faults</text>
+  <text x="728" y="595" fill="#526b7e" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Media / power faults</text>
+  <rect x="940" y="475" width="270" height="150" rx="16" fill="#e7f6f7" stroke="#76b9bd" stroke-width="2" />
+  <text x="958" y="509" fill="#183349" font-size="21" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">Storage / recovery</text>
+  <text x="958" y="541" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Mirrored F-RAM transactions</text>
+  <text x="958" y="568" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">NAND / ECC / bad blocks</text>
+  <text x="958" y="595" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Commit and restart recovery</text>
+  <rect x="440" y="740" width="460" height="130" rx="16" fill="#ffffff" stroke="#d2dde7" stroke-width="2" />
+  <text x="458" y="774" fill="#183349" font-size="21" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">Host interface and controlled readout</text>
+  <text x="458" y="806" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Recording-priority arbitration and status</text>
+  <text x="458" y="833" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Schema-aware instrument data export</text>
+  <rect x="1300" y="235" width="440" height="170" rx="16" fill="#e7f6f7" stroke="#76b9bd" stroke-width="2" />
+  <text x="1318" y="269" fill="#183349" font-size="21" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">Mirrored F-RAM staging</text>
+  <text x="1318" y="301" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">2 × 16 Mbit = 4 MiB physical</text>
+  <text x="1318" y="328" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">2 MiB logical (mirrored, not added)</text>
+  <text x="1318" y="355" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">1.5 MiB data staging ≈ 9 s at budget rate</text>
+  <text x="1318" y="382" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">0.5 MiB metadata / recovery reserve</text>
+  <rect x="1300" y="500" width="440" height="175" rx="16" fill="#ffffff" stroke="#83b698" stroke-width="2" />
+  <text x="1318" y="534" fill="#183349" font-size="21" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">NAND archive</text>
+  <text x="1318" y="566" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">32 GiB raw  →  at least 16 GiB usable</text>
+  <text x="1318" y="593" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">25-hour minimum instrument history</text>
+  <text x="1318" y="620" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Cyclic chunks; qualified media / ECC TBD</text>
+  <text x="1318" y="647" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Stored stream budget: 175,000 bytes/s</text>
+  <rect x="1300" y="740" width="440" height="130" rx="16" fill="#ffffff" stroke="#d2dde7" stroke-width="2" />
+  <text x="1318" y="774" fill="#183349" font-size="21" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">Independent recovery / ground tools</text>
+  <text x="1318" y="806" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Documented media format and separate decoder</text>
+  <text x="1318" y="833" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Recover data without the normal DSP host</text>
+  <polyline points="340,290 440,290" fill="none" stroke="#23435b" stroke-width="3" stroke-linejoin="round" />
+  <polygon points="440,290 428.0,285.0 428.0,295.0" fill="#23435b" />
+  <polyline points="670,315 710,315" fill="none" stroke="#23435b" stroke-width="3" stroke-linejoin="round" />
+  <polygon points="710,315 698.0,310.0 698.0,320.0" fill="#23435b" />
+  <polyline points="900,315 940,315" fill="none" stroke="#23435b" stroke-width="3" stroke-linejoin="round" />
+  <polygon points="940,315 928.0,310.0 928.0,320.0" fill="#23435b" />
+  <polyline points="1075,395 1075,475" fill="none" stroke="#23435b" stroke-width="3" stroke-linejoin="round" />
+  <polygon points="1075,475 1080.0,463.0 1070.0,463.0" fill="#23435b" />
+  <text x="1090" y="440" fill="#526b7e" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">chunk stream</text>
+  <polyline points="1210,525 1260,525 1260,330 1300,330" fill="none" stroke="#087e8b" stroke-width="3" stroke-linejoin="round" />
+  <polygon points="1300,330 1288.0,325.0 1288.0,335.0" fill="#087e8b" />
+  <polygon points="1210,525 1222.0,530.0 1222.0,520.0" fill="#087e8b" />
+  <polyline points="1210,585 1300,585" fill="none" stroke="#087e8b" stroke-width="3" stroke-linejoin="round" />
+  <polygon points="1300,585 1288.0,580.0 1288.0,590.0" fill="#087e8b" />
+  <polygon points="1210,585 1222.0,590.0 1222.0,580.0" fill="#087e8b" />
+  <polyline points="340,495 380,495 380,365 440,365" fill="none" stroke="#aa640e" stroke-width="3" stroke-linejoin="round" stroke-dasharray="8 6" />
+  <polygon points="440,365 428.0,360.0 428.0,370.0" fill="#aa640e" />
+  <polyline points="555,475 555,395" fill="none" stroke="#aa640e" stroke-width="3" stroke-linejoin="round" stroke-dasharray="8 6" />
+  <polygon points="555,395 550.0,407.0 560.0,407.0" fill="#aa640e" />
+  <polyline points="805,395 805,475" fill="none" stroke="#aa640e" stroke-width="3" stroke-linejoin="round" stroke-dasharray="8 6" />
+  <polygon points="805,475 810.0,463.0 800.0,463.0" fill="#aa640e" />
+  <polyline points="710,550 670,550" fill="none" stroke="#aa640e" stroke-width="3" stroke-linejoin="round" stroke-dasharray="8 6" />
+  <polygon points="670,550 682.0,555.0 682.0,545.0" fill="#aa640e" />
+  <polyline points="900,550 940,550" fill="none" stroke="#aa640e" stroke-width="3" stroke-linejoin="round" stroke-dasharray="8 6" />
+  <polygon points="940,550 928.0,545.0 928.0,555.0" fill="#aa640e" />
+  <polygon points="900,550 912.0,555.0 912.0,545.0" fill="#aa640e" />
+  <polyline points="340,695 805,695 805,625" fill="none" stroke="#aa640e" stroke-width="3" stroke-linejoin="round" stroke-dasharray="8 6" />
+  <polygon points="805,625 800.0,637.0 810.0,637.0" fill="#aa640e" />
+  <polyline points="340,825 440,825" fill="none" stroke="#087e8b" stroke-width="3" stroke-linejoin="round" />
+  <polygon points="440,825 428.0,820.0 428.0,830.0" fill="#087e8b" />
+  <polygon points="340,825 352.0,830.0 352.0,820.0" fill="#087e8b" />
+  <polyline points="555,740 555,625" fill="none" stroke="#aa640e" stroke-width="3" stroke-linejoin="round" stroke-dasharray="8 6" />
+  <polygon points="555,625 550.0,637.0 560.0,637.0" fill="#aa640e" />
+  <text x="570" y="678" fill="#526b7e" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">commands / status</text>
+  <polyline points="900,800 1075,800 1075,625" fill="none" stroke="#087e8b" stroke-width="3" stroke-linejoin="round" />
+  <polygon points="1075,625 1070.0,637.0 1080.0,637.0" fill="#087e8b" />
+  <polygon points="900,800 912.0,805.0 912.0,795.0" fill="#087e8b" />
+  <text x="938" y="833" fill="#526b7e" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">readout / recovery</text>
+  <polyline points="1520,675 1520,740" fill="none" stroke="#087e8b" stroke-width="3" stroke-linejoin="round" />
+  <polygon points="1520,740 1525.0,728.0 1515.0,728.0" fill="#087e8b" />
+  <text x="1535" y="720" fill="#526b7e" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">service extraction</text>
+  <polyline points="40,960 110,960" fill="none" stroke="#23435b" stroke-width="3" stroke-linejoin="round" />
+  <polygon points="110,960 98.0,955.0 98.0,965.0" fill="#23435b" />
+  <text x="125" y="967" fill="#183349" font-size="17" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Instrument data</text>
+  <polyline points="330,960 400,960" fill="none" stroke="#087e8b" stroke-width="3" stroke-linejoin="round" />
+  <polygon points="400,960 388.0,955.0 388.0,965.0" fill="#087e8b" />
+  <polygon points="330,960 342.0,965.0 342.0,955.0" fill="#087e8b" />
+  <text x="415" y="967" fill="#183349" font-size="17" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Storage / readout</text>
+  <polyline points="655,960 725,960" fill="none" stroke="#aa640e" stroke-width="3" stroke-linejoin="round" stroke-dasharray="8 6" />
+  <polygon points="725,960 713.0,955.0 713.0,965.0" fill="#aa640e" />
+  <text x="740" y="967" fill="#183349" font-size="17" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Control / time / health</text>
+  <text x="1760" y="967" fill="#526b7e" font-size="15" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="end">Raw CSMU access is a recovery interface; electrical design remains TBD.</text>
+  <text x="40" y="1016" fill="#087e8b" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">PLANNING ENVELOPE</text>
+  <text x="250" y="1016" fill="#183349" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">140,000 B/s current sample stream + 25% allowance = 175,000 B/s; 16 GiB usable ≈ 27.3 h.</text>
+  <text x="40" y="1050" fill="#526b7e" font-size="17" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Proposed design only. New RTL fit, board timing, power-loss limits and aviation qualification remain unverified. Voice recording is outside scope.</text>
+</svg>
