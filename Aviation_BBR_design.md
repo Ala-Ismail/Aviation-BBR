@@ -10,6 +10,10 @@
 
 **Resized aviation planning baseline (8 November 2026):** MAX 10 `10M50DAF484I7G`, two 16-Mbit F-RAM devices for mirrored persistent staging, and a 32-GiB raw NAND archive providing at least 16 GiB of usable recording capacity. This replaces the inherited device/area limit for aviation planning only. See section 6.3 for assumptions, calculations and verification limits.
 
+![Aviation BBR proposed top-level flight instrument recorder architecture](images/aviation-bbr-top-level.png)
+
+*Proposed architecture; implementation and hardware validation are pending.* [View editable SVG](images/aviation-bbr-top-level.svg).
+
 ## 1. Design conclusion and scope
 
 BBR offers useful acquisition, buffering, serialization, CRC, storage and readback building blocks. Its present event recorder architecture is insufficient for a mandatory aviation flight recorder. The largest changes are continuous recording, hours of retained data, recovery of the latest data after sudden power loss, aircraft interfaces, crash-protected storage and certification evidence.
