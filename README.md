@@ -11,7 +11,7 @@ The planning baseline in the design study uses an Intel MAX 10 `10M50DAF484I7G`,
 ## Documentation
 
 - [Aviation BBR design study](Aviation_BBR_design.md): scope, acquisition requirements, storage sizing, proposed architecture, and verification planning.
-- [Business proposal](Aviation_BBR_business_proposal.md): target customers, product pricing, illustrative unit economics, pilot strategy, and development milestones.
+- [Business proposal](Aviation_BBR_business_proposal.md): target customers, TMV market analysis, product pricing, illustrative unit economics, AUD development estimates, and pilot strategy.
 
 ## Related repository
 

@@ -45,7 +45,48 @@ Begin with bench and research use. Any airborne pilot must establish the applica
 
 The proposed differentiation is configurable acquisition, explicit quality and recovery behavior, and accessible engineering readout. FPGA implementation is an enabling technology; it is not, by itself, a reason for customers to pay a premium.
 
-No total market size or obtainable market share is claimed. Interview evidence and qualified opportunities should precede a market forecast.
+Section 3.1 provides an initial market-sizing model using a published Australian fleet baseline and explicit assumptions. It is not a validated demand forecast or a global market valuation. Interview evidence and qualified opportunities should precede a sales forecast.
+
+### 3.1. TMV analysis: total market value
+
+**Definition and scope:** In this proposal, TMV means **Total Market Value**: the theoretical hardware sales value of a defined aircraft population at the proposed unit price. The starting scope is Australian registered amateur-built, single-engine piston aeroplanes. This is a deliberately narrow beachhead aligned with the proposed experimental-aircraft offering. Research benches and OEM development platforms remain target customers but are excluded from the numerical model because no verified customer count is available. TMV is neither company valuation nor annual recorder-industry revenue.
+
+**Published baseline:** CASA's *Annual Report 2024-25*, table A.15, printed page 169, records **1,558 amateur-built, single-engine piston aeroplanes** at 30 June 2025. Table A.14 records **16,545 aircraft** on the register overall. The broader total includes many aircraft outside the initial product scope and is not used as the addressable market. These are historical registered-fleet counts, not current active-aircraft counts or evidence of recorder demand. [CASA Annual Report 2024-25](https://www.casa.gov.au/sites/default/files/2025-11/casa-annual-report-2024-2025.pdf#page=172).
+
+The following calculations assume one recorder per aircraft at **USD 3,500**, no discounts and no installation revenue. They describe a one-time installed-base opportunity, not annual recurring revenue. Bench kits, support, integration services, future fleet growth and replacement purchases are excluded to avoid unsupported additions or double counting. Aircraft eligibility and installation permissions still require individual assessment.
+
+| Market layer | Calculation | Units | Hardware value (USD) | Interpretation |
+|---|---|---:|---:|---|
+| TMV / theoretical total addressable market (TAM) for this beachhead | 1,558 aircraft x 1 recorder x $3,500 | 1,558 | **$5,453,000** | Upper bound assuming every aircraft buys; not achievable revenue guidance |
+| Serviceable available market (SAM), low assumption | Floor of 1,558 x 10% | 155 | **$542,500** | Assumed subset with suitable interfaces, a feasible installation and an unmet recording need |
+| SAM, base assumption | Floor of 1,558 x 20% | 311 | **$1,088,500** | Working discovery hypothesis; neither eligibility nor willingness to pay is verified |
+| SAM, high assumption | Floor of 1,558 x 30% | 467 | **$1,634,500** | Requires broader compatibility and demonstrated customer need |
+
+The 10-30% serviceability range is a management assumption, not a CASA statistic. Validate it by screening aircraft configuration, existing logging capability, installation effort, interface compatibility and an identified buyer. Do not classify an aircraft as serviceable solely because it is amateur-built.
+
+#### Obtainable sales over 36 months after commercial release
+
+The serviceable obtainable market (SOM) below is a set of sales hypotheses constrained by direct customer acquisition and delivery capacity. It is not an existing pipeline. Account counts and units per account are assumptions; an account may be a developer or integrator buying for several aircraft. Bench-only sales are outside this model, and each aircraft installation must be counted once even if an integrator and owner both appear in the contact list.
+
+| Scenario | Purchasing accounts | Average units per account | Units over 36 months | Hardware revenue (USD) | Share of base SAM (311 units) |
+|---|---:|---:|---:|---:|---:|
+| Low | 10 | 2.5 | 25 | $87,500 | 8.0% |
+| Base | 20 | 2.5 | 50 | $175,000 | 16.1% |
+| Stretch | 40 | 2.5 | 100 | $350,000 | 32.2% |
+
+Even the base case requires a meaningful share of a small market. The stretch case needs strong distribution, proven customer references and sufficient manufacturing/support capacity; it must not be used as the funding baseline before orders substantiate it. The three pilot partners in section 1 are development objectives, not these purchasing accounts. Count any qualifying pilot deliveries within the 36-month totals only if delivered during that period, not as extra sales.
+
+**Stock versus annual demand:** If, purely as a sensitivity test, 5-10% of the 311-aircraft base SAM purchases each year, the result is approximately **15-31 units per year**, rounded down, or **USD 52,500-108,500 annual hardware revenue** at the target price. This assumed purchase rate includes no repeat purchase or fleet growth and cannot be applied indefinitely to an unchanged installed base. At the section 6 contribution assumption of USD 2,100 per unit, that volume yields only **USD 31,500-65,100 per year before fixed costs**. There is no evidence yet that this purchase rate can be achieved.
+
+**Commercial implication:** The narrow Australian amateur-built segment alone does not currently justify the AUD 600,000-1,018,750 development envelope. A stronger case needs paid OEM/research integrations, a separately measured export opportunity, lower development expenditure, or a combination supported by customer evidence. USD revenues above must not be compared directly with AUD development expenditure without a dated exchange-rate assumption. Section 7's 25/100/250-unit scenarios remain general scale illustrations, not annual Australian-market forecasts; they are not additive to this SOM.
+
+#### Validation and expansion gates
+
+1. Build a deduplicated Australian prospect list and screen at least 30 candidate aircraft or projects for technical fit, present logging capability, installation path and buyer budget. Treat this as a targeted discovery sample, not a representative statistical survey.
+2. Complete the section 8 customer interviews and secure three paid pilot commitments with a defined standard configuration. Record actual quotes, objections, acquisition effort and support requirements.
+3. Replace the assumed serviceability percentages and account conversion with documented prospect evidence before publishing an investor forecast. Reconcile annual sales with lead time, procurement timing and production capacity.
+4. Size research/OEM benches and each export geography separately using primary fleet/customer data and local installation requirements. Remove overlaps before combining markets. No global TMV or growth rate is claimed by this draft.
+5. Evaluate the approved-FDR market only after feasibility defines the product, approval route and eligible fleet. Do not apply the future USD 25,000-45,000 price to the initial non-certified beachhead to enlarge the opportunity.
 
 ## 4. Market price references
 
