@@ -4,7 +4,7 @@
 
 **Date:** 8 November 2026  
 **Status:** Draft commercial proposal for customer discovery and development planning  
-**Currency:** All amounts are US dollars (USD), excluding taxes, shipping and installation.
+**Currency:** Selling prices and commercial scenarios are in US dollars (USD). Section 8.1 development estimates are in Australian dollars (AUD). Amounts exclude applicable taxes; development-budget inclusions and exclusions are stated below.
 
 ## 1. Proposal
 
@@ -109,7 +109,7 @@ These scenarios illustrate scale at $3,500 revenue and $1,400 recurring cost per
 
 For illustration, recovering **$300,000 of fixed development expenditure alone** would require **143 units** at $2,100 contribution each. This does not establish company break-even: operating overhead, selling costs, cash timing and further development must also be covered. The $300,000 figure is an example, not an engineering budget or funding request.
 
-Before seeking investment or committing delivery dates, prepare a bottom-up budget for engineering effort, prototype hardware, test equipment, third-party testing, tooling, software, insurance and working capital. Estimate cash required to buy and build pilot units before customer payments arrive. Include schedule and cost contingency based on the identified risks. Price and fund crash protection and aviation approval separately.
+Section 8.1 provides an initial AUD development estimate by stage. Before seeking investment or committing delivery dates, replace its allowances with a bottom-up budget for engineering effort, prototype hardware, test equipment, third-party testing, tooling, software, insurance and working capital. Estimate cash required to buy and build pilot units before customer payments arrive. Price and fund crash protection and aviation approval separately.
 
 Prefer paid discovery and milestone-based development contracts for customer-specific work. Any deposits should be tied to written deliverables, acceptance criteria, delivery assumptions and cancellation terms. Customer commitments must not be represented as guaranteed production revenue before their conditions are satisfied.
 
@@ -127,6 +127,42 @@ Timing below is an initial planning assumption measured from a funded project st
 | Approved FDR feasibility | Separate project decision | Identified aircraft/customer, approval basis, qualified partners, costed crash-survival and assurance plan, funding and commercial justification |
 
 The initial 12-month sequence is not a delivery commitment. Do not launch against a date if recovery, retention, interface compatibility or production evidence remains incomplete.
+
+### 8.1. AUD development cost estimate by stage
+
+**Estimate basis, 8 November 2026:** These are preliminary engineering estimates, not supplier quotations or a fixed-price offer. Budget **AUD 600,000-1,018,750** through controlled release of the non-certified development recorder, including a 25% contingency. A practical midpoint planning allowance is approximately **AUD 810,000**. Approved-FDR feasibility adds **AUD 62,500-125,000** and does not fund development or approval of that future product.
+
+The model assumes a blended **AUD 150 per productive person-hour**, covering engineering, verification, readout software, documentation and project coordination. This is an assumed fully burdened project rate, not a quoted contractor rate or employee wage. It includes employment/contracting burden and routine business overhead allocated to those hours; do not add the same labour costs again. Australian recruitment guides can inform subsequent role-specific costing, but do not validate this project's blended rate or effort: [Hays engineering salary guide](https://www.hays.com.au/salary-guide/engineering).
+
+All amounts in the following table are **AUD thousands (k)**. Stage costs are incremental; sum them rather than treating each row as a cumulative budget. Low and high values reflect different effort and procurement outcomes, not statistical confidence limits.
+
+| Development stage | Productive person-hours | Labour at AUD 150/hour (k) | Other direct costs (k) | Base cost (k) | Budget including 25% contingency (k) |
+|---|---:|---:|---:|---:|---:|
+| Customer discovery and requirements | 160-240 | 24-36 | 6-14 | 30-50 | **37.50-62.50** |
+| Architecture and bench demonstrator | 600-900 | 90-135 | 15-25 | 105-160 | **131.25-200.00** |
+| Integrated prototype | 1,000-1,600 | 150-240 | 35-70 | 185-310 | **231.25-387.50** |
+| Paid pilot and production preparation | 600-1,000 | 90-150 | 30-60 | 120-210 | **150.00-262.50** |
+| Controlled commercial release | 200-400 | 30-60 | 10-25 | 40-85 | **50.00-106.25** |
+| **Non-certified product subtotal** | **2,560-4,140** | **384-621** | **96-194** | **480-815** | **600.00-1,018.75** |
+| Approved FDR feasibility, optional additional stage | 240-480 | 36-72 | 14-28 | 50-100 | **62.50-125.00** |
+| **Total including optional feasibility** | **2,800-4,620** | **420-693** | **110-222** | **530-915** | **662.50-1,143.75** |
+
+Other direct cost allowances cover the following stage-specific work:
+
+- **Discovery:** interview travel, requirements workshops and initial commercial/installation advice.
+- **Bench demonstrator:** development boards, memory evaluation hardware, tool licences, purchased standards and bench fixtures.
+- **Integrated prototype:** two PCB build/revision cycles, prototype enclosures, components, laboratory access and preliminary EMC/environmental checks. These checks are not formal aviation qualification.
+- **Pilot preparation:** an assumed 5-10 pilot units, production-test fixtures, limited field support/travel and documentation delivery. This allowance funds pilot hardware once; pilot units must not also be charged as production inventory in the development budget. Any pilot revenue is modelled separately and has not been deducted.
+- **Commercial release:** manufacturing handover, initial test-station/tooling costs, packaging setup and release-specific insurance/legal allowances. Ongoing premiums, overhead and support beyond the release effort need an operating budget.
+- **Approved FDR feasibility:** specialist assurance advice, approval-basis planning, crash-survivable memory options and preliminary laboratory/manufacturing quotations. The labour column covers internal coordination; specialist external advice is in other direct costs.
+
+The effort assumes one standard acquisition configuration, reuse of baseline BBR only after technical and rights review, access to existing general laboratory equipment, and a small engineering team with overlapping hardware, FPGA, software and verification work. At 1,400 productive hours per person-year, the non-certified estimate represents approximately **1.8-3.0 person-years**. The indicative schedule therefore requires appropriate team capacity and parallel work; it is not a solo developer's 12-month promise. Extensive new aircraft-bus adapters or a largely new NAND/ECC controller could exceed this range.
+
+Contingency is calculated as 25% of each stage's labour plus other direct costs. Release funding by stage against the section 8 acceptance gates. These totals include no GST, financing costs, large production inventory, full aircraft installation/modification programme, flight-test aircraft hire, or formal crash-survival and aviation qualification campaign. Prototype-component and equipment procurement allowances include estimated inbound freight. Overseas purchases need exchange-rate allowances when supplier quotes are obtained.
+
+**Future approved-FDR development and qualification remain uncosted.** Feasibility must establish the target assurance level, equipment and installation approval routes, crash-protected memory approach, independent verification, accredited testing and retest exposure before a credible programme budget can be presented. The optional feasibility allowance is not an estimate of certification cost and does not imply that approval can be completed within the non-certified product budget.
+
+The earlier **USD 300,000** recovery example in section 7 remains a separate arithmetic illustration; it is not this AUD budget. No AUD/USD exchange rate has been applied. Before presenting a combined investment-return model, choose and date an exchange-rate assumption and convert costs and revenues into one currency.
 
 ## 9. Sales and pilot plan
 
@@ -160,4 +196,4 @@ This proposal introduces no dependency on publishing private BBR source or copyi
 
 Proceed with customer discovery and a costed bench-demonstrator plan. Retain **$3,500 per unit** as the initial standard-recorder price hypothesis and **$1,400 per unit** as the recurring-cost ceiling. Revisit both after interviews, supplier quotations and prototype testing.
 
-The next commercial deliverables are three qualified pilot opportunities, a standard interface specification, a quoted BOM, an engineering work estimate and a staged cash budget. Those deliverables should support the decision to fund an integrated prototype. No immediate investment amount, certified-product launch date or sales forecast is approved by this draft.
+The next commercial deliverables are three qualified pilot opportunities, a standard interface specification, a quoted BOM, a validated engineering work estimate and a staged cash budget refining section 8.1. The proposed initial discovery-stage allowance is **AUD 37,500-62,500 including contingency**; the non-certified product funding envelope is **AUD 600,000-1,018,750**. These are estimates for review, not an approved funding commitment. No certified-product launch date or sales forecast is approved by this draft.
