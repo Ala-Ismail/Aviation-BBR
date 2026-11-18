@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1080" viewBox="0 0 1800 1080" role="img" aria-labelledby="title description">
-  <title id="title">Aviation BBR: proposed top-level instrument recorder</title>
-  <desc id="description">Aircraft instrument data enters acquisition, scheduled queues and a chunk framer inside a MAX 10 10M50 FPGA. The storage controller writes mirrored F-RAM staging and a 32 GiB raw NAND archive in a proposed crash-survivable memory unit. External time, recording control, health supervision, host readout and independent media extraction are shown. This is a design proposal, not implemented hardware.</desc>
+  <title id="title">Aviation BBR technology assessment: FPGA recorder reference scenario</title>
+  <desc id="description">Aircraft instrument data enters acquisition, scheduled queues and a chunk framer inside a MAX 10 10M50 FPGA. The storage controller writes mirrored F-RAM staging outside the candidate crash enclosure and a 32 GiB raw NAND archive inside it. The last data held in staging could be lost at impact. The architecture and capacity assumptions are used for comparison in the technology assessment.</desc>
   <rect x="0" y="0" width="1800" height="1080" rx="0" fill="#f4f7fb" stroke="#f4f7fb" stroke-width="2" />
   <text x="40" y="57" fill="#183349" font-size="34" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">AVIATION BBR</text>
-  <text x="40" y="91" fill="#526b7e" font-size="23" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Top-level flight instrument and aircraft-system recorder</text>
-  <text x="1760" y="54" fill="#087e8b" font-size="17" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="end">PROPOSED ARCHITECTURE</text>
-  <text x="1760" y="84" fill="#526b7e" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="end">8 November 2026  |  Instrument data only</text>
+  <text x="40" y="91" fill="#526b7e" font-size="23" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">FPGA reference scenario for continuous instrument recording</text>
+  <text x="1760" y="54" fill="#087e8b" font-size="17" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="end">TECHNOLOGY ASSESSMENT</text>
+  <text x="1760" y="84" fill="#526b7e" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="end">8 November 2026  |  Research baseline</text>
   <rect x="400" y="130" width="850" height="800" rx="22" fill="#eaf2fa" stroke="#8daec9" stroke-width="2" />
   <text x="430" y="168" fill="#183349" font-size="25" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">FPGA  ·  MAX 10 10M50DAF484I7G</text>
-  <text x="430" y="199" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">75 MHz core  |  30,000 fitted-LE planning limit  |  182 M9Ks available</text>
+  <text x="430" y="199" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Sizing assumptions: 75 MHz core, 30,000 fitted LEs, 182 M9Ks available</text>
   <rect x="1280" y="445" width="480" height="255" rx="20" fill="#e9f6ee" stroke="#529d70" stroke-width="2" />
-  <text x="1300" y="476" fill="#287146" font-size="17" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">PROPOSED CRASH-PROTECTED MEMORY</text>
+  <text x="1300" y="476" fill="#287146" font-size="17" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">CANDIDATE CRASH ENCLOSURE</text>
   <rect x="40" y="235" width="300" height="160" rx="16" fill="#ffffff" stroke="#d2dde7" stroke-width="2" />
   <text x="58" y="269" fill="#183349" font-size="21" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">Aircraft instrument data</text>
   <text x="58" y="301" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Air data, attitude, navigation</text>
@@ -64,16 +64,16 @@
   <text x="458" y="833" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Schema-aware instrument data export</text>
   <rect x="1300" y="235" width="440" height="170" rx="16" fill="#e7f6f7" stroke="#76b9bd" stroke-width="2" />
   <text x="1318" y="269" fill="#183349" font-size="21" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">Mirrored F-RAM staging</text>
-  <text x="1318" y="301" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">2 × 16 Mbit = 4 MiB physical</text>
-  <text x="1318" y="328" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">2 MiB logical (mirrored, not added)</text>
-  <text x="1318" y="355" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">1.5 MiB data staging ≈ 9 s at budget rate</text>
-  <text x="1318" y="382" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">0.5 MiB metadata / recovery reserve</text>
+  <text x="1318" y="301" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">2 × 16 Mbit, 2 MiB logical after mirroring</text>
+  <text x="1318" y="328" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">1.5 MiB data, 0.5 MiB metadata reserve</text>
+  <text x="1318" y="355" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">≈ 9 s at modeled rate from empty</text>
+  <text x="1318" y="382" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Data held outside the crash enclosure</text>
   <rect x="1300" y="500" width="440" height="175" rx="16" fill="#ffffff" stroke="#83b698" stroke-width="2" />
   <text x="1318" y="534" fill="#183349" font-size="21" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">NAND archive</text>
-  <text x="1318" y="566" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">32 GiB raw  →  at least 16 GiB usable</text>
-  <text x="1318" y="593" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">25-hour minimum instrument history</text>
-  <text x="1318" y="620" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Cyclic chunks; qualified media / ECC TBD</text>
-  <text x="1318" y="647" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Stored stream budget: 175,000 bytes/s</text>
+  <text x="1318" y="566" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">32 GiB raw, 16 GiB assumed usable</text>
+  <text x="1318" y="593" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">25-hour retention scenario</text>
+  <text x="1318" y="620" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Media, ECC and service limits open</text>
+  <text x="1318" y="647" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Modeled stream: 175,000 bytes/s</text>
   <rect x="1300" y="740" width="440" height="130" rx="16" fill="#ffffff" stroke="#d2dde7" stroke-width="2" />
   <text x="1318" y="774" fill="#183349" font-size="21" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">Independent recovery / ground tools</text>
   <text x="1318" y="806" fill="#526b7e" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Documented media format and separate decoder</text>
@@ -129,8 +129,8 @@
   <polyline points="655,960 725,960" fill="none" stroke="#aa640e" stroke-width="3" stroke-linejoin="round" stroke-dasharray="8 6" />
   <polygon points="725,960 713.0,955.0 713.0,965.0" fill="#aa640e" />
   <text x="740" y="967" fill="#183349" font-size="17" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Control / time / health</text>
-  <text x="1760" y="967" fill="#526b7e" font-size="15" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="end">Raw CSMU access is a recovery interface; electrical design remains TBD.</text>
-  <text x="40" y="1016" fill="#087e8b" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">PLANNING ENVELOPE</text>
-  <text x="250" y="1016" fill="#183349" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">140,000 B/s current sample stream + 25% allowance = 175,000 B/s; 16 GiB usable ≈ 27.3 h.</text>
-  <text x="40" y="1050" fill="#526b7e" font-size="17" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Proposed design only. New RTL fit, board timing, power-loss limits and aviation qualification remain unverified. Voice recording is outside scope.</text>
+  <text x="1760" y="967" fill="#526b7e" font-size="15" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="end">Independent extraction interface remains open.</text>
+  <text x="40" y="1016" fill="#087e8b" font-size="16" font-family="Segoe UI, Arial, sans-serif" font-weight="700" text-anchor="start">CAPACITY MODEL</text>
+  <text x="250" y="1016" fill="#183349" font-size="18" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">140,000 B/s + 25% allowance = 175,000 B/s. At that rate, 16 GiB usable holds about 27.3 h.</text>
+  <text x="40" y="1050" fill="#526b7e" font-size="17" font-family="Segoe UI, Arial, sans-serif" font-weight="400" text-anchor="start">Open feasibility questions: repeated media stalls, data held in staging at impact, FPGA and board fit, and aircraft qualification.</text>
 </svg>

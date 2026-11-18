@@ -1,55 +1,41 @@
-# Aviation BBR business proposal
+# Aviation BBR business assessment
 
-[Documentation index](README.md) | [Technical design](Aviation_BBR_design.md)
+[Documentation index](README.md) ? [Technology assessment](Aviation_BBR_technology_assessment.md) ? [Feasibility study](Aviation_BBR_feasibility_study.md)
 
-**Date:** 8 November 2026  
-**Status:** Draft commercial proposal for customer discovery and development planning  
-**Currency:** Selling prices and commercial scenarios are in US dollars (USD). Section 8.1 development estimates are in Australian dollars (AUD). Amounts exclude applicable taxes; development-budget inclusions and exclusions are stated below.
+**Research baseline** ? 8 November 2026. Prices and sales scenarios are in USD. Development estimates are in AUD. Amounts exclude applicable taxes.
 
-## 1. Proposal
+## 1. Commercial findings
 
-Develop Aviation BBR into a configurable flight instrument data recorder for aircraft development, research and experimental applications. Start with a non-certified engineering product targeting a **$3,500 direct selling price per unit**, supported by separately priced integration services. Pursue a crash-protected, approved flight data recorder only after customer demand, technical feasibility and a funded approval route have been established.
+The [technology assessment](Aviation_BBR_technology_assessment.md) identifies reusable elements of the private BBR event recorder and the gaps in extending them to continuous aviation instrument recording. Those gaps affect integration cost, hardware cost and customer support. The most accessible use cases to assess are bench evaluation and engineering data capture. Supplemental airborne logging depends on aircraft-specific interfaces and installation permissions. An approved flight data recorder (FDR) has distinct evidence and cost requirements.
 
-The immediate commercial objective is to secure three development partners, agree their recording requirements and obtain paid pilot commitments before committing to production hardware.
+The illustrative direct-sales case uses **USD 3,500** per unit and **USD 1,400** in recurring unit costs. At those assumptions, 50 units over 36 months yield **USD 175,000** revenue and **USD 105,000** contribution before fixed costs. The separate bottom-up development scenario is **AUD 600,000?1,018,750** through controlled release. The domestic hardware case offers limited scale, and a full investment-return model would require a common currency, dated cash flows and evidence for sales, integration margin and support costs.
 
-This is a proposal for a product under development. The public repository currently contains a design study and architecture diagrams; it does not contain an implemented or validated aviation recorder. The private baseline BBR is a potential source of reusable engineering, not evidence that the aviation product is complete. No customers, orders, supplier quotations or investment commitments are established by this document.
+Customer demand, paid evaluations, supplier quotes, installation costs and production yield remain unverified. The study uses three prospective partners as a discovery threshold and 5?10 pilot units as a cost-model input.
 
-![Proposed Aviation BBR architecture](images/aviation-bbr-top-level.png)
+## 2. Customer needs and alternatives
 
-## 2. Customer problem and proposed value
+Aircraft developers and researchers need interpretable instrument data with enough context to reconstruct test events, diagnose missing samples and recover recordings after interruptions. Existing avionics logging and general-purpose data acquisition equipment are alternatives. The commercial question is whether better recovery, accessible exports or easier integration would justify a dedicated recorder for a specific use case.
 
-Aircraft developers and research teams need to capture numerical instrument, sensor and aircraft-system data, reconstruct test events and identify missing or corrupted measurements. Configuring interfaces, recovering data after power interruptions and converting raw recordings into usable engineering data can consume significant integration effort.
+The capability and cost assumptions come from the [technology assessment](Aviation_BBR_technology_assessment.md#6-storage-and-bandwidth-sizing). A useful evaluation would measure source compatibility, timestamp quality, end-to-end retention, recoverable tail loss, independent decoding and engineering hours per integration. The 25-hour and FPGA/F-RAM/NAND reference scenario provides a common basis for estimating effort. A simpler bench or supplemental recorder could have a different retention target or hardware partition once a use case is established.
 
-Aviation BBR would offer a documented recording path with continuous capture, source identity, timestamps, explicit data-quality information and independent readout. The intended value is dependable, interpretable data and a manageable integration effort. Customer interviews must establish whether these benefits justify a dedicated recorder instead of existing avionics logging or a general-purpose data acquisition system.
+## 3. Candidate customers and addressable market
 
-Proposed capabilities follow the [technical design](Aviation_BBR_design.md):
-
-- Continuous instrument recording with a provisional 25-hour retention target.
-- FPGA acquisition and buffering with defined timing and source-validity behavior.
-- Mirrored F-RAM staging and a NAND archive, subject to component and controller validation.
-- Recoverable recording chunks and measured power-loss behavior.
-- A documented data format, download utility and engineering-data export.
-
-These are development targets. Interface count, sampling performance, usable storage, recoverable tail loss and environmental limits must be specified and verified before being included as guaranteed sales specifications. Voice, image and video recording are outside the current design scope. Crash protection is a separate future development activity.
-
-## 3. Initial customers and positioning
-
-| Customer segment | Proposed use | Commercial approach |
+| Customer segment | Candidate use | Evidence to collect |
 |---|---|---|
-| Aircraft and avionics development teams | Bench integration and instrument-data capture during development | Paid evaluation followed by a defined pilot |
-| Universities and aerospace research groups | Repeatable data collection and engineering analysis | Evaluation kit with documented interfaces and export tools |
-| Experimental aircraft developers | Supplemental instrument logging where the installation and use are permitted | Limited pilot with agreed installation responsibilities |
-| Equipment manufacturers | Recorder integration into their own development platforms | Hardware supply plus separately scoped engineering services |
+| Aircraft and avionics development teams | Bench integration and instrument-data capture during development | Required interfaces, existing logging gaps and budget for an evaluation |
+| Universities and aerospace research groups | Repeatable data collection and engineering analysis | Export formats, purchase budget and support needs |
+| Experimental aircraft developers | Supplemental instrument logging where the installation and use are permitted | Installation responsibilities, aircraft compatibility and willingness to pay |
+| Equipment manufacturers | Recorder integration into their own development platforms | Recurring volume and scope for paid integration |
 
-Begin with bench and research use. Any airborne pilot must establish the applicable installation and operating permissions before flight. The initial product is not offered as a replacement for a required approved FDR.
+Bench and research use offers a way to measure integration effort and recording performance. An airborne evaluation would also require the applicable installation and operating permissions.
 
-The proposed differentiation is configurable acquisition, explicit quality and recovery behavior, and accessible engineering readout. FPGA implementation is an enabling technology; it is not, by itself, a reason for customers to pay a premium.
+Possible differentiators include configurable acquisition, explicit quality and recovery behavior, and accessible engineering readout. Their value depends on measurable improvements over the customer?s existing workflow.
 
-Section 3.1 provides an initial market-sizing model using a published Australian fleet baseline and explicit assumptions. It is not a validated demand forecast or a global market valuation. Interview evidence and qualified opportunities should precede a sales forecast.
+Section 3.1 estimates the Australian installed-base opportunity using a published fleet count and assumed serviceability. Buyer interviews and qualified opportunities would provide a separate basis for forecasting demand.
 
 ### 3.1. TMV analysis: total market value
 
-**Definition and scope:** In this proposal, TMV means **Total Market Value**: the theoretical hardware sales value of a defined aircraft population at the proposed unit price. The starting scope is Australian registered amateur-built, single-engine piston aeroplanes. This is a deliberately narrow beachhead aligned with the proposed experimental-aircraft offering. Research benches and OEM development platforms remain target customers but are excluded from the numerical model because no verified customer count is available. TMV is neither company valuation nor annual recorder-industry revenue.
+**Definition and scope:** Here TMV means **Total Market Value**: the theoretical hardware sales value of a defined aircraft population at the modeled unit price. The starting scope is Australian registered amateur-built, single-engine piston aeroplanes. This is a deliberately narrow beachhead aligned with the supplemental experimental-aircraft scenario. Research benches and OEM development platforms remain target customers but are excluded from the numerical model because no verified customer count is available. TMV is neither company valuation nor annual recorder-industry revenue.
 
 **Published baseline:** CASA's *Annual Report 2024-25*, table A.15, printed page 169, records **1,558 amateur-built, single-engine piston aeroplanes** at 30 June 2025. Table A.14 records **16,545 aircraft** on the register overall. The broader total includes many aircraft outside the initial product scope and is not used as the addressable market. These are historical registered-fleet counts, not current active-aircraft counts or evidence of recorder demand. [CASA Annual Report 2024-25](https://www.casa.gov.au/sites/default/files/2025-11/casa-annual-report-2024-2025.pdf#page=172).
 
@@ -66,7 +52,7 @@ The 10-30% serviceability range is a management assumption, not a CASA statistic
 
 #### Obtainable sales over 36 months after commercial release
 
-The serviceable obtainable market (SOM) below is a set of sales hypotheses constrained by direct customer acquisition and delivery capacity. It is not an existing pipeline. Account counts and units per account are assumptions; an account may be a developer or integrator buying for several aircraft. Bench-only sales are outside this model, and each aircraft installation must be counted once even if an integrator and owner both appear in the contact list.
+The serviceable obtainable market (SOM) models hypothetical sales constrained by direct customer acquisition and delivery capacity. Account counts and units per account are assumptions. A developer or integrator could buy for multiple aircraft. The model counts each aircraft installation once and excludes bench-only sales.
 
 | Scenario | Purchasing accounts | Average units per account | Units over 36 months | Hardware revenue (USD) | Share of base SAM (311 units) |
 |---|---:|---:|---:|---:|---:|
@@ -74,13 +60,13 @@ The serviceable obtainable market (SOM) below is a set of sales hypotheses const
 | Base | 20 | 2.5 | 50 | $175,000 | 16.1% |
 | Stretch | 40 | 2.5 | 100 | $350,000 | 32.2% |
 
-Even the base case requires a meaningful share of a small market. The stretch case needs strong distribution, proven customer references and sufficient manufacturing/support capacity; it must not be used as the funding baseline before orders substantiate it. The three pilot partners in section 1 are development objectives, not these purchasing accounts. Count any qualifying pilot deliveries within the 36-month totals only if delivered during that period, not as extra sales.
+Even the base case requires a meaningful share of a small market. The stretch case depends on distribution, customer references, manufacturing capacity and support coverage. Orders would provide evidence for using it in a funding model. The three prospective partners in section 1 are a discovery threshold. Pilot deliveries would count toward the 36-month scenario only if they qualify as sales delivered during that period.
 
 **Stock versus annual demand:** If, purely as a sensitivity test, 5-10% of the 311-aircraft base SAM purchases each year, the result is approximately **15-31 units per year**, rounded down, or **USD 52,500-108,500 annual hardware revenue** at the target price. This assumed purchase rate includes no repeat purchase or fleet growth and cannot be applied indefinitely to an unchanged installed base. At the section 6 contribution assumption of USD 2,100 per unit, that volume yields only **USD 31,500-65,100 per year before fixed costs**. There is no evidence yet that this purchase rate can be achieved.
 
 **Commercial implication:** The narrow Australian amateur-built segment alone does not currently justify the AUD 600,000-1,018,750 development envelope. A stronger case needs paid OEM/research integrations, a separately measured export opportunity, lower development expenditure, or a combination supported by customer evidence. USD revenues above must not be compared directly with AUD development expenditure without a dated exchange-rate assumption. Section 7's 25/100/250-unit scenarios remain general scale illustrations, not annual Australian-market forecasts; they are not additive to this SOM.
 
-#### Validation and expansion gates
+#### Evidence that could change the market estimate
 
 1. Build a deduplicated Australian prospect list and screen at least 30 candidate aircraft or projects for technical fit, present logging capability, installation path and buyer budget. Treat this as a targeted discovery sample, not a representative statistical survey.
 2. Complete the section 8 customer interviews and secure three paid pilot commitments with a defined standard configuration. Record actual quotes, objections, acquisition effort and support requirements.
@@ -97,11 +83,11 @@ Public references provide context for pricing, but are not equivalent product co
 | FAA Investigative Technologies Aviation Rulemaking Committee, final report dated 29 August 2025, section VI.B, printed page 21 | Approximately $3,000 for a light recording unit to $60,000 for an ED-112-compliant FDR | Broad hardware range; aircraft modification and installation are excluded. [Report](https://www.faa.gov/media/105721) |
 | Air Power, part 2100-2045-23, checked 8 November 2026 | Listed price $38,244; refundable core charge $10,000; total before core return $48,244 | Listing states new condition and backorder. Price and terms require confirmation; this is not an Aviation BBR quotation. [Listing](https://www.airpowerinc.com/2100-2045-23) |
 
-The $3,500 initial target is a pricing hypothesis to test with prospective customers. It is not derived from verified BBR manufacturing costs or demonstrated willingness to pay.
+The USD 3,500 modeled price is a pricing hypothesis to test with prospective customers. It is not derived from verified BBR manufacturing costs or demonstrated willingness to pay.
 
-## 5. Product and revenue model
+## 5. Offering and price scenarios
 
-| Offering | Proposed price | Proposed scope and conditions |
+| Offering scenario | Illustrative price | Scope and conditions |
 |---|---|---|
 | Engineering evaluation kit | $1,500-3,000 per kit | Bench hardware, example data, basic download tools and limited evaluation support; configuration may be reduced from the enclosed product |
 | Standard development recorder | **$3,500 target per unit**; planning range $3,000-6,000 | Enclosed and tested non-certified recorder, documented standard interfaces, readout utility and defined support |
@@ -111,7 +97,7 @@ The $3,500 initial target is a pricing hypothesis to test with prospective custo
 
 Standard hardware pricing excludes sensors, aircraft wiring, installation, custom interfaces, qualification, approval work and bespoke analysis. The standard interface set and included support allowance must be fixed before accepting production orders.
 
-Use direct sales for initial pilots. Distributor pricing needs a separate model because channel discounts reduce realized revenue. Do not promise volume discounts until manufacturing yield, support load and procurement costs are measured.
+The revenue model assumes direct sales. A distributor case would need separate allowances for channel discounts, manufacturing yield, volume pricing and support.
 
 ## 6. Illustrative unit economics
 
@@ -136,9 +122,9 @@ At this allowance, gross contribution is **$2,100 per unit**, or **60% of revenu
 | $3,500 | $2,000 | $1,500 | 42.9% |
 | $4,500 | $2,000 | $2,500 | 55.6% |
 
-If the required aircraft interfaces or storage implementation make the cost ceiling unrealistic, reduce the standard configuration, increase price or stop the product before production commitments.
+Interface scope, storage design and included support are the main uncertainties in the cost ceiling. The price and contribution sensitivity above shows how a higher recurring cost would affect the case.
 
-## 7. Sales scenarios and development funding
+## 7. Sales and cost-recovery scenarios
 
 These scenarios illustrate scale at $3,500 revenue and $1,400 recurring cost per unit. They are not an annual forecast, sales pipeline or evidence of demand. Integration and support-contract revenue are excluded because delivery effort and margins are not yet estimated.
 
@@ -148,17 +134,17 @@ These scenarios illustrate scale at $3,500 revenue and $1,400 recurring cost per
 | 100 | $350,000 | $140,000 | $210,000 |
 | 250 | $875,000 | $350,000 | $525,000 |
 
-For illustration, recovering **$300,000 of fixed development expenditure alone** would require **143 units** at $2,100 contribution each. This does not establish company break-even: operating overhead, selling costs, cash timing and further development must also be covered. The $300,000 figure is an example, not an engineering budget or funding request.
+An illustrative **USD 300,000** in fixed development expenditure would require **143 units** at USD 2,100 contribution per unit. Company break-even would also depend on operating overhead, selling costs, cash timing and further development.
 
 Section 8.1 provides an initial AUD development estimate by stage. Before seeking investment or committing delivery dates, replace its allowances with a bottom-up budget for engineering effort, prototype hardware, test equipment, third-party testing, tooling, software, insurance and working capital. Estimate cash required to buy and build pilot units before customer payments arrive. Price and fund crash protection and aviation approval separately.
 
-Prefer paid discovery and milestone-based development contracts for customer-specific work. Any deposits should be tied to written deliverables, acceptance criteria, delivery assumptions and cancellation terms. Customer commitments must not be represented as guaranteed production revenue before their conditions are satisfied.
+Paid discovery and milestone-based development are possible revenue models for customer-specific work. Their cash flows would depend on deliverables, payment terms, acceptance criteria and cancellation terms.
 
-## 8. Development stages and release gates
+## 8. Illustrative work packages and cost model
 
-Timing below is an initial planning assumption measured from a funded project start with an available engineering team. Team capacity, procurement and requirements review must establish the actual schedule.
+The timing columns show a sequencing scenario measured from a hypothetical funded start with an available team. Requirements, staffing and procurement lead times would determine the actual duration.
 
-| Stage | Indicative timing | Required evidence before proceeding |
+| Work package | Illustrative timing | Evidence or output |
 |---|---|---|
 | Customer discovery and requirements | Months 0-2 | At least 10 customer interviews; three qualified development partners; agreed interfaces and acceptance criteria; willingness-to-pay evidence |
 | Architecture and bench demonstrator | Months 2-5 | Versioned format, acquisition model, readout prototype and initial BOM; simulation of rollover, faults and power-loss recovery |
@@ -167,11 +153,11 @@ Timing below is an initial planning assumption measured from a funded project st
 | Controlled commercial release | After pilot acceptance | Released configuration, production acceptance tests, published limitations and a funded support process |
 | Approved FDR feasibility | Separate project decision | Identified aircraft/customer, approval basis, qualified partners, costed crash-survival and assurance plan, funding and commercial justification |
 
-The initial 12-month sequence is not a delivery commitment. Do not launch against a date if recovery, retention, interface compatibility or production evidence remains incomplete.
+The 12-month case assumes overlapping technical work and timely procurement. Measured recovery, retention, interface compatibility and manufacturing results determine whether the scenario remains credible.
 
 ### 8.1. AUD development cost estimate by stage
 
-**Estimate basis, 8 November 2026:** These are preliminary engineering estimates, not supplier quotations or a fixed-price offer. Budget **AUD 600,000-1,018,750** through controlled release of the non-certified development recorder, including a 25% contingency. A practical midpoint planning allowance is approximately **AUD 810,000**. Approved-FDR feasibility adds **AUD 62,500-125,000** and does not fund development or approval of that future product.
+**Estimate basis, 8 November 2026.** The model yields **AUD 600,000?1,018,750** through controlled release of a non-certified development recorder, including 25% contingency. The midpoint is approximately **AUD 810,000**. A separate approved-FDR feasibility work package is estimated at **AUD 62,500?125,000**. Formal qualification and approval remain uncosted.
 
 The model assumes a blended **AUD 150 per productive person-hour**, covering engineering, verification, readout software, documentation and project coordination. This is an assumed fully burdened project rate, not a quoted contractor rate or employee wage. It includes employment/contracting burden and routine business overhead allocated to those hours; do not add the same labour costs again. Australian recruitment guides can inform subsequent role-specific costing, but do not validate this project's blended rate or effort: [Hays engineering salary guide](https://www.hays.com.au/salary-guide/engineering).
 
@@ -199,31 +185,31 @@ Other direct cost allowances cover the following stage-specific work:
 
 The effort assumes one standard acquisition configuration, reuse of baseline BBR only after technical and rights review, access to existing general laboratory equipment, and a small engineering team with overlapping hardware, FPGA, software and verification work. At 1,400 productive hours per person-year, the non-certified estimate represents approximately **1.8-3.0 person-years**. The indicative schedule therefore requires appropriate team capacity and parallel work; it is not a solo developer's 12-month promise. Extensive new aircraft-bus adapters or a largely new NAND/ECC controller could exceed this range.
 
-Contingency is calculated as 25% of each stage's labour plus other direct costs. Release funding by stage against the section 8 acceptance gates. These totals include no GST, financing costs, large production inventory, full aircraft installation/modification programme, flight-test aircraft hire, or formal crash-survival and aviation qualification campaign. Prototype-component and equipment procurement allowances include estimated inbound freight. Overseas purchases need exchange-rate allowances when supplier quotes are obtained.
+Contingency is calculated as 25% of each stage's labour plus other direct costs. These totals include no GST, financing costs, large production inventory, full aircraft installation/modification programme, flight-test aircraft hire, or formal crash-survival and aviation qualification campaign. Prototype-component and equipment procurement allowances include estimated inbound freight. Overseas purchases need exchange-rate allowances when supplier quotes are obtained.
 
 **Future approved-FDR development and qualification remain uncosted.** Feasibility must establish the target assurance level, equipment and installation approval routes, crash-protected memory approach, independent verification, accredited testing and retest exposure before a credible programme budget can be presented. The optional feasibility allowance is not an estimate of certification cost and does not imply that approval can be completed within the non-certified product budget.
 
-The earlier **USD 300,000** recovery example in section 7 remains a separate arithmetic illustration; it is not this AUD budget. No AUD/USD exchange rate has been applied. Before presenting a combined investment-return model, choose and date an exchange-rate assumption and convert costs and revenues into one currency.
+Section 7 uses an illustrative **USD 300,000** expense for the unit recovery calculation. A combined return model would use dated cash flows and a common currency for development costs and revenues.
 
-## 9. Sales and pilot plan
+## 9. Customer and pilot evidence
 
-Prepare a short product brief, the architecture diagram, an interface questionnaire and a demonstration using representative instrument data. Approach engineering decision makers directly and record their present logging method, integration costs, required interfaces, data-loss tolerance and purchasing process.
+A product brief, interface questionnaire and representative instrument-data demonstration would support interviews with engineering buyers. Their existing logging methods, integration costs, interfaces, data-loss tolerance and purchasing process would provide the comparison baseline.
 
-Select three pilot partners with similar core requirements to avoid creating three unrelated products. Agree a fixed standard configuration and quote custom adapters separately. Each pilot should demonstrate sustained recording, readable export, timestamp/quality behavior and measured recovery after interruptions against written acceptance criteria.
+Three comparable evaluations could test whether a common configuration is viable. Scoping custom adapters separately would show how much integration is repeatable. Pilot evidence would include sustained recording, usable exports, timestamp and quality behavior, and measured recovery after interruptions.
 
-Measure conversion from interview to paid pilot, engineering hours per integration, recurring unit cost, production yield, support hours and pilot acceptance. Release the standard product only when customers accept its measured capabilities at a price that supports the cost model.
+Interview-to-pilot conversion, engineering hours per integration, recurring unit cost, production yield and support hours would show whether the modeled price and contribution are achievable.
 
-## 10. Intellectual property and delivery model
+## 10. Licensing and reuse dependencies
 
-The public [Aviation-BBR repository](https://github.com/Ala-Ismail/Aviation-BBR) contains MIT-licensed material. The private [BBR baseline](https://github.com/Ala-Ismail/BBR) requires authorized access. Publication of this proposal does not grant access to or change the license of the private repository.
+The public [Aviation-BBR repository](https://github.com/Ala-Ismail/Aviation-BBR) contains MIT-licensed material. The private [BBR baseline](https://github.com/Ala-Ismail/BBR) requires authorized access. Publication of this assessment does not grant access to or change the license of the private repository.
 
 Revenue should come from delivered hardware, tested configurations, integration and support. Do not base the business case on exclusive access to material already published under MIT. Before shipping a product, establish the rights to every reused design, HDL block, software component and vendor IP, and define which deliverables will be public, private or supplied under customer contracts.
 
-This proposal introduces no dependency on publishing private BBR source or copying its private documents into the public repository.
+Authorized access and reuse rights are dependencies for any option that uses private BBR implementation material.
 
-## 11. Main business risks
+## 11. Commercial risks and evidence
 
-| Risk | Effect | Proposed response |
+| Risk | Effect | Evidence or scenario to assess |
 |---|---|---|
 | Existing avionics logging meets customer needs | Weak willingness to pay | Validate specific unmet requirements before hardware investment |
 | Too many bespoke interfaces | Integration consumes hardware margin | Publish a standard configuration; charge separately for custom engineering |
@@ -233,8 +219,8 @@ This proposal introduces no dependency on publishing private BBR source or copyi
 | Support and liability costs exceed allowances | Lower margin and higher cash needs | Define support scope, review insurance needs and measure pilot support effort |
 | Approval programme begins before demand is proven | Capital required exceeds available funding | Make approval a separately funded, customer-backed decision |
 
-## 12. Proposed next decision
+## 12. Commercial uncertainties
 
-Proceed with customer discovery and a costed bench-demonstrator plan. Retain **$3,500 per unit** as the initial standard-recorder price hypothesis and **$1,400 per unit** as the recurring-cost ceiling. Revisit both after interviews, supplier quotations and prototype testing.
+The strongest evidence for a bench product would be a quoted configuration, a measured integration effort and buyers willing to pay for evaluation against a specific use case. A repeatable airborne offering would also require installation and support costs from representative aircraft. The Australian market model excludes research and OEM systems, service revenue and exports until those segments have independently sourced inputs.
 
-The next commercial deliverables are three qualified pilot opportunities, a standard interface specification, a quoted BOM, a validated engineering work estimate and a staged cash budget refining section 8.1. The proposed initial discovery-stage allowance is **AUD 37,500-62,500 including contingency**; the non-certified product funding envelope is **AUD 600,000-1,018,750**. These are estimates for review, not an approved funding commitment. No certified-product launch date or sales forecast is approved by this draft.
+The [feasibility study](Aviation_BBR_feasibility_study.md) combines these commercial uncertainties with the technology evidence and identifies what would change the assessment for each option.
